@@ -1,16 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@theme {
+  --font-poppins: Poppins, sans-serif;
+  --font-inter: Inter, sans-serif;
+  --font-roboto: Roboto, sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --font-fira: "Fira Code", monospace;
+  --font-vt323: "VT323", monospace;
+  --font-courier: "Courier Prime", "Courier New", monospace;
+  --font-share-tech: "Share Tech Mono", monospace;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-amethyst-50: #faf7fd;
+  --color-amethyst-100: #f2edfa;
+  --color-amethyst-200: #e8def6;
+  --color-amethyst-300: #d6c5ed;
+  --color-amethyst-400: #bc9fe1;
+  --color-amethyst-500: #a27ad2;
+  --color-amethyst-600: #976dc7;
+  --color-amethyst-700: #7649a7;
+  --color-amethyst-800: #644089;
+  --color-amethyst-900: #52346f;
+  --color-amethyst-950: #361c4f;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-malachite-50: #efffee;
+  --color-malachite-100: #d8ffd7;
+  --color-malachite-200: #b3ffb2;
+  --color-malachite-300: #76ff76;
+  --color-malachite-400: #33f533;
+  --color-malachite-500: #08c908;
+  --color-malachite-600: #00b900;
+  --color-malachite-700: #049105;
+  --color-malachite-800: #0a710b;
+  --color-malachite-900: #0a5d0c;
+  --color-malachite-950: #003402;
 }
