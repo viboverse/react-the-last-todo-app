@@ -1,9 +1,5 @@
-import { MdDelete, MdEdit } from "react-icons/md";
-
-type TodoItmeProps = {
-  title: string;
-  priority: "low" | "medium" | "high";
-};
+import { MdDelete } from "react-icons/md";
+import type { Todo } from "../types/todoItem";
 
 const priorityColors = {
   low: "text-green-400 border-green-400",
@@ -11,18 +7,29 @@ const priorityColors = {
   high: "text-red-400 border-red-400",
 };
 
-export default function TodoItem({ title, priority }: TodoItmeProps) {
+type TodoItemProps = Todo & {
+  onDelete: (id: number) => void;
+};
+
+export default function TodoItem({
+  title,
+  id,
+  priority,
+  onDelete,
+}: TodoItemProps) {
   return (
-    <li className="border-malachite-400 flex items-center justify-between gap-x-4 border-b px-4 py-2">
-      <span className="flex-1">{title}</span>
+    <li className="border-malachite-400 flex flex-wrap items-center justify-between gap-x-2 gap-y-2 border-b px-2 py-2 text-base md:gap-x-4 md:px-4 md:text-lg">
+      <span className="wrap-break-words flex-1">{title}</span>
       <span
-        className={`ml-4 shrink-0 rounded-full border px-3 py-1 text-xs ${priorityColors[priority]}`}
+        className={`ml-2 shrink-0 rounded-full border px-2 py-1 text-xs md:ml-4 md:px-3 ${priorityColors[priority]}`}
       >
         {priority}
       </span>
-      <div className="ml-12 flex gap-4">
-        <MdEdit className="size-6 hover:cursor-pointer" />
-        <MdDelete className="size-6 hover:cursor-pointer" />
+      <div className="flex shrink-0 gap-2 md:gap-4">
+        <MdDelete
+          className="size-5 hover:cursor-pointer md:size-6"
+          onClick={() => onDelete(id)}
+        />
       </div>
     </li>
   );
